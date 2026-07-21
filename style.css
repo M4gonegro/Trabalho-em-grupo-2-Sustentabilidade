@@ -57,6 +57,7 @@ nav a:hover{
    SEÇÕES
 ========================== */
 
+
 section{
     padding: 20px 10%;
 }
@@ -76,51 +77,105 @@ section:nth-of-type(even){
 ========================== */
 
 /* Container dos cards */
-.produtosContainer{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+
+
+
+.secoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 30px; /* espaço entre os cards */
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto; /* centraliza */
 }
 
-/* Card do produto */
-.produtosContainer article{
-    background-color: rgba(255,255,255,.9);
-    border: 1px solid #d4d4d4;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    transition: .3s;
+.card {
+  position: relative;
+  width: 100%; /* ocupa 100% da coluna */
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: height 0.5s ease;
 }
 
-/* Animação ao passar o mouse */
-.produtosContainer article:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,.15);
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease; /* 1. adiciona filter na transition */
 }
 
-/* Imagens */
-.produtosContainer article img{
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+.conteudo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: #fff;
+  padding: 20px;
+  transform: translateY(70%); /* começa escondido pra baixo */
+  transition: transform 0.5s ease;
 }
 
-/* Nome do produto */
-.produtosContainer article h3{
-    color: #2E5E3B;
-    margin-bottom: 10px;
-    font-size: 1.4rem;
+.conteudo h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  color: #4bf135;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.986);
 }
 
-/* Texto */
-.produtosContainer article p{
-    font-size: 1rem;
-    color: #555;
+.conteudo p,
+.conteudo a {
+  opacity: 0; /* começa invisível */
+  transition: opacity 0.4s ease 0.2s; /* delay pra aparecer depois */
 }
+
+.conteudo button {
+  margin-top: 15px;
+  padding: 8px 18px;
+  background: #d4a373;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 100;
+  transition: all 0.5s ease 0.2s;  
+}
+
+.btn-ver-mais:hover {
+  background: #c08f5e;
+}
+
+
+
+/* ANIMAÇÃO NO HOVER */
+
+.card:hover {
+  height: 320px;
+}
+
+.card:hover img {
+  transform: scale(1.1); /* zoom na imagem */
+  filter: blur(2px) brightness(0.6); /* 2. desfoca + escurece um pouco */
+}
+
+.card:hover .conteudo {
+  transform: translateY(0); /* sobe o texto */
+}
+
+.card:hover .conteudo p,
+.card:hover .conteudo a {
+  opacity: 1; /* aparece o texto e botão */
+}
+
+
+
+
+
+
 
 /* ==========================
    LISTAS
@@ -203,4 +258,100 @@ footer{
     color: white;
     text-align: center;
     padding: 25px;
+}
+
+
+
+
+
+/* ==========================
+   MODAL DE DETALHES
+========================== */
+
+/* Fundo escuro semitransparente que cobre a tela */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Quando ativo, exibe o modal */
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Caixa central do produto */
+.modal-content {
+  background-color: #fff;
+  width: 90%;
+  max-width: 650px;
+  max-height: 85vh;
+  border-radius: 12px;
+  position: relative;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botão 'X' no canto superior direito */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: #d4a373;
+  color: #000;
+}
+
+.modal-content img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 25px;
+}
+
+.modal-body h3 {
+  color: #2E5E3B;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.modal-body h4 {
+  margin-top: 15px;
+  color: #555;
+}
+
+.modal-body hr {
+  margin: 15px 0;
+  border: 0;
+  border-top: 1px solid #ddd;
 }
