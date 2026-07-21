@@ -58,7 +58,7 @@ nav a:hover{
 ========================== */
 
 section{
-    padding: 70px 10%;
+    padding: 20px 10%;
 }
 
 /* Seções ímpares - Bege */
@@ -139,9 +139,60 @@ li{
    CONTATO
 ========================== */
 
-#contato p{
-    margin: 10px 0;
+/* Título */
+#contato h2{
+    text-align: center;
+    margin-bottom: 35px;
 }
+
+/* Container dos autores */
+.contatoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+
+/* Card de cada autor */
+.contatoContainer article{
+    background: rgba(255,255,255,.9);
+    border: 1px solid #d4d4d4;
+    border-radius: 12px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+/* Efeito ao passar o mouse */
+.contatoContainer article:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+
+/* Foto do autor */
+.contatoContainer article img{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+/* Nome */
+.contatoContainer article h3{
+    color: #2E5E3B;
+    margin-bottom: 10px;
+}
+
+/* Contatos */
+.contatoContainer article p{
+    margin: 4px 0;
+    font-size: 1rem;
+}
+
 
 /* ==========================
    RODAPÉ
