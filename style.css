@@ -78,7 +78,13 @@ section:nth-of-type(even){
 
 /* Container dos cards */
 
-
+.titulo-produtos{
+  grid-column: 1 / -1; /* Faz o título ocupar todas as colunas */
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
 
 .secoes {
   display: grid;
@@ -174,9 +180,6 @@ section:nth-of-type(even){
 
 
 
-
-
-
 /* ==========================
    LISTAS
 ========================== */
@@ -190,6 +193,15 @@ li{
     margin-bottom: 10px;
 }
 
+
+
+.ImpactoLocal p, h2, li{
+  color: #333;
+
+}
+
+
+
 /* ==========================
    CONTATO
 ========================== */
@@ -198,6 +210,7 @@ li{
 #contato h2{
     text-align: center;
     margin-bottom: 35px;
+    color:#333;
 }
 
 /* Container dos autores */
@@ -238,7 +251,7 @@ li{
 
 /* Nome */
 .contatoContainer article h3{
-    color: #2E5E3B;
+    color: #fa2500;
     margin-bottom: 10px;
 }
 
