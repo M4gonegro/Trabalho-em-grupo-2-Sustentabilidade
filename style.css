@@ -134,15 +134,22 @@ section:nth-of-type(even){
   background: linear-gradient(transparent, rgba(0,0,0,0.8));
   color: #fff;
   padding: 20px;
-  transform: translateY(70%); /* começa escondido pra baixo */
+  
+  /* Mantém o topo fixado para garantir alinhamento idêntico */
+  transform: translateY(calc(100% - 60px)); /* Mostra apenas os primeiros 60px (área do h3) */
   transition: transform 0.5s ease;
 }
 
 .conteudo h3 {
-  margin: 0 0 10px 0;
+  margin: 0;
+  height: 30px; /* Força uma altura fixa para o título */
+  line-height: 30px;
   font-size: 20px;
   color: #4bf135;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.986);
+  white-space: nowrap; /* Evita que o título dobre em 2 linhas */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .conteudo p,
@@ -182,7 +189,7 @@ section:nth-of-type(even){
 }
 
 .card:hover .conteudo {
-  transform: translateY(0); /* sobe o texto */
+  transform: translateY(0); /* Revela todo o conteúdo ao passar o mouse */
 }
 
 .card:hover .conteudo p,
