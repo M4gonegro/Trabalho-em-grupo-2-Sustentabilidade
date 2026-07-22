@@ -39,20 +39,33 @@ header p{
 }
 
 nav{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    background-color: #2E5E3B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    padding: 15px 20px;
     margin-top: 20px;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.2);
 }
 
 nav a{
     color: white;
     text-decoration: none;
-    margin: 0 15px;
     font-weight: bold;
+    transition: .3s;
 }
 
 nav a:hover{
-    text-decoration: underline;
+    color: #d4a373;
 }
-
 /* ==========================
    SEÇÕES
 ========================== */
@@ -281,26 +294,33 @@ footer{
    MODAL DE DETALHES
 ========================== */
 
-/* Fundo escuro semitransparente que cobre a tela */
+/* Fundo escuro que cobre toda a tela */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   z-index: 1000;
+
+  /* Começa invisível */
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
-/* Quando ativo, exibe o modal */
+/* Quando o modal estiver ativo */
 .modal-overlay.active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
@@ -316,9 +336,22 @@ footer{
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
+
+  /* ANIMAÇÃO INICIAL */
+  transform: scale(0.75) translateY(60px);
+  opacity: 0;
+
+  /* Transição suave */
+  transition: all 0.5s cubic-bezier(0.17, 0.67, 0.25, 1.2);
 }
 
-/* Botão 'X' no canto superior direito */
+/* Estado final da animação */
+.modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+/* Botão fechar (X) */
 .modal-close {
   position: absolute;
   top: 15px;
@@ -334,20 +367,28 @@ footer{
   cursor: pointer;
   z-index: 10;
   line-height: 1;
-  transition: background 0.2s;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .modal-close:hover {
   background: #d4a373;
   color: #000;
+  transform: scale(1.08);
 }
 
+.modal-close:focus-visible {
+  outline: 3px solid #1f6f3d;
+  outline-offset: 3px;
+}
+
+/* Imagem do produto */
 .modal-content img {
   width: 100%;
   height: 250px;
   object-fit: cover;
 }
 
+/* Conteúdo interno */
 .modal-body {
   padding: 25px;
 }
@@ -367,4 +408,35 @@ footer{
   margin: 15px 0;
   border: 0;
   border-top: 1px solid #ddd;
+}
+
+/* Respeita usuários que preferem menos animação */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay,
+  .modal-content,
+  .modal-close {
+    transition: none;
+  }
+/* Adiciona animação de ZOOM ao clicar em Saiba */
+ .modal-content{
+    background:#fff;
+    width:90%;
+    max-width:650px;
+    max-height:85vh;
+    border-radius:15px;
+    overflow-y:auto;
+    position:relative;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
+
+    opacity:0;
+    transform:
+        scale(.55)
+        translateY(80px)
+        rotateX(15deg);
+
+    transition:
+        opacity .45s ease,
+        transform .55s cubic-bezier(.17,.89,.32,1.28);
+}
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoOil - Reciclagem de Óleo de Cozinha</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <a href="#produtos">Produtos</a> |
             <a href="#impacto">Impacto Ambiental</a> |
             <a href="#contato">Contato</a> |
-            <a href="#local">Locais de Coleta/Revenda</a>
+            <a href="#local">Locais de Coleta e Revenda</a>
         </nav>
 
         <hr>
@@ -57,13 +58,13 @@
 
 
 
-<section class="secoes">   
+<section id="produtos" class="secoes">
 
 <h2 class="titulo-produtos">Nossos Produtos</h2>
 
      
  <!-- Produto 1: Óleos de Massagem -->
-   <!-- Detalhes complementares do produto que aparecem ao clicar em SAIBA MAIS -->
+   <!-- Detalhes complementares do produto que aparecem ao clicar em SAIBA MAIS -->    
 <div class="card" data-detalhes="O óleo de massagem EcoOil é 100% natural, produzido a partir do reaproveitamento sustentável. Rico em vitamina E, proporciona hidratação profunda e alívio do estresse diário com aroma de lavanda.">
   <img src="/img/produtos/ÓLEO.webp" alt="Óleos de Massagem">
   <div class="conteudo">
@@ -267,37 +268,92 @@ Objetivos do Projeto:<br>
 
     <div class="contatoContainer">
 
-        <article>
-            <img src="./img/IGOR.png" alt="Autor 1">
+    <!-- IGOR -->
+<article>
+    <img src="./img/IGOR.png" alt="IGOR CHAD GOSTOSO">
 
-            <h3>IGOR CRISTIAN</h3>
+    <h3>IGOR CRISTIAN</h3>
 
-            <p>(47) 98905-5807</p>
-            <p>Contato 2</p>
-            <p>github.com/M4gonegro</p>
-        </article>
+    <p>
+        <a href="https://wa.me/5547989055807" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            (47) 98905-5807
+        </a>
+    </p>
 
-        <article>
-            <img src="./img/ALANIS.png" alt="Autor 2">
+    <p>
+        <a href="https://www.instagram.com/igorcristian7" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+            igorcristian7
+        </a>
+    </p>
 
-            <h3>ALANIS 2</h3>
+    <p>
+        <a href="https://github.com/M4gonegro" target="_blank">
+            <i class="fa-brands fa-github"></i>
+            github.com/M4gonegro
+        </a>
+    </p>
+</article>
 
-            <p>(54) 9910-2260</p>
-            <p>Contato 2</p>
-            <p>github.com/AlanisDill</p>
-        </article>
+<!-- ALANIS -->
+<article>
+    <img src="./img/ALANIS.png" alt="ALANIS">
 
-        <article>
-            <img src="./img/CAROL.png" alt="Autor 3">
+        <h3>ALANIS</h3>
 
-            <h3>CAROLINE</h3>
+    <p>
+        <a href="https://wa.me/555499102260" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        (54) 9910-2260
+        </a>
+    </p>
 
-            <p>(11) 96864-2049</p>
-            <p>Contato 2</p>
-            <p>github.com/CAROLMILGRAU</p>
-        </article>
+    <p>
+        <a href="https://www.instagram.com/AlanisDill" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        AlanisDill
+        </a>
+    </p>
 
-    </div>
+    <p>
+        <a href="https://github.com/AlanisDill" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        github.com/AlanisDill
+        </a>
+    </p>
+</article>
+
+
+<!-- CAROL -->
+<article>
+    <img src="./img/CAROL.png" alt="CAROL">
+
+        <h3>CAROLINE</h3>
+
+    <p>
+        <a href="https://wa.me/11968642049" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+        (11) 96864-2049
+        </a>
+    </p>
+
+    <p>
+        <a href="https://www.instagram.com/AlanisDill" target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        Carol47
+        </a>
+    </p>
+
+    <p>
+        <a href="https://github.com/AlanisDill" target="_blank">
+        <i class="fa-brands fa-github"></i>
+        github.com/CarolLMilGrau
+        </a>
+    </p>
+</article>
+
+    
 
 </section>
 
@@ -313,22 +369,24 @@ Objetivos do Projeto:<br>
 
 
 
-    <!-- ESTRUTURA DO MODAL (Adicionar antes do </body>) -->
-  <div id="modal-produto" class="modal-overlay">
+    <!-- ESTRUTURA DO MODAL (Adicionar antes do BODY -->
+<div id="modal-produto" class="modal-overlay">
     <div class="modal-content">
-      <button class="modal-close" id="btn-fechar">&times;</button>
-      <img id="modal-img" src="" alt="Imagem do Produto">
-      <div class="modal-body">
-        <h3 id="modal-titulo"></h3>
-        <p id="modal-descricao-curta"></p>
-        <hr>
-        <h4>Detalhes do Produto</h4>
-        <p id="modal-detalhes">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
-      </div>
+        <button class="modal-close" id="btn-fechar">&times;</button>
+        <img id="modal-img" src="" alt="Imagem do Produto">
+
+        <div class="modal-body">
+            <h3 id="modal-titulo"></h3>
+            <p id="modal-descricao-curta"></p>
+
+            <hr>
+
+            <h4>Detalhes do Produto</h4>
+
+            <p id="modal-detalhes"></p>
+        </div>
     </div>
-  </div>
+</div>
 
   <script src="script.js"></script>
 
