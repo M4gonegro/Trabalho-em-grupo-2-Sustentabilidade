@@ -2,96 +2,97 @@
    ESTILO GERAL
 ========================== */
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    background-color: #F5F5F5;
-    color: #333;
-    line-height: 1.6;
+body {
+  background-color: #F5F5F5;
+  color: #333;
+  line-height: 1.6;
 }
 
 /* ==========================
    CABEÇALHO
 ========================== */
 
-header{
-    background-color: #2E5E3B;
-    color: white;
-    text-align: center;
-    padding: 12px 20px;
+header {
+  background-color: #2E5E3B;
+  color: white;
+  text-align: center;
+  padding: 12px 20px;
 }
 
-header h1{
-    font-size: 3rem;
+header h1 {
+  font-size: 3rem;
 }
 
-header p{
-    margin: 10px 0;
-    margin-top:  -2px;
-    margin-bottom: 15px;
+header p {
+  margin: 10px 0;
+  margin-top: -2px;
+  margin-bottom: 15px;
 }
 
-header img{
+header img {
   width: auto;
   height: 120px;
   margin-top: -5px;
   margin-bottom: -2px;
 }
 
-nav{
-    position: sticky;
-    top: 0;
-    z-index: 999;
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
 
-    background-color: #2E5E3B;
+  background-color: #2E5E3B;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
 
-    padding: 15px 20px;
-    margin-top: 20px;
+  padding: 15px 20px;
+  margin-top: 20px;
 
-    box-shadow: 0 4px 1px 10px rgba(3, 160, 63, 0.185);
+  box-shadow: 0 4px 1px 10px rgba(3, 160, 63, 0.185);
 }
 
-nav a{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: .3s;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
 }
 
-nav a:hover{
-    color: #d4a373;
+nav a:hover {
+  color: #d4a373;
 }
+
 /* ==========================
    SEÇÕES
 ========================== */
 
 
-section{
-    padding: 20px 10%;
+section {
+  padding: 20px 10%;
 }
 
 /* Seções ímpares - Bege */
-section:nth-of-type(odd){
-    background-color: #DFDDD1;
+section:nth-of-type(odd) {
+  background-color: #DFDDD1;
 }
 
 /* Seções pares - Verde */
-section:nth-of-type(even){
-    background-color: #A6BF76;
+section:nth-of-type(even) {
+  background-color: #A6BF76;
 }
 
 /* ==========================
@@ -100,8 +101,9 @@ section:nth-of-type(even){
 
 /* Container dos cards */
 
-.titulo-produtos{
-  grid-column: 1 / -1; /* Faz o título ocupar todas as colunas */
+.titulo-produtos {
+  grid-column: 1 / -1;
+  /* Faz o título ocupar todas as colunas */
   text-align: center;
   font-size: 2rem;
   color: #333;
@@ -110,21 +112,25 @@ section:nth-of-type(even){
 
 .secoes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-  gap: 30px; /* espaço entre os cards */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 colunas iguais */
+  gap: 30px;
+  /* espaço entre os cards */
   padding: 40px;
   max-width: 1200px;
-  margin: 0 auto; /* centraliza */
+  margin: 0 auto;
+  /* centraliza */
 }
 
 .card {
   position: relative;
-  width: 100%; /* ocupa 100% da coluna */
+  width: 100%;
+  /* ocupa 100% da coluna */
   height: 250px;
   border-radius: 15px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: height 0.5s ease;
 }
 
@@ -132,7 +138,8 @@ section:nth-of-type(even){
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease; /* 1. adiciona filter na transition */
+  transition: transform 0.5s ease, filter 0.5s ease;
+  /* 1. adiciona filter na transition */
 }
 
 .conteudo {
@@ -140,31 +147,36 @@ section:nth-of-type(even){
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
   color: #fff;
   padding: 20px;
-  
+
   /* Mantém o topo fixado para garantir alinhamento idêntico */
-  transform: translateY(calc(100% - 60px)); /* Mostra apenas os primeiros 60px (área do h3) */
+  transform: translateY(calc(100% - 60px));
+  /* Mostra apenas os primeiros 60px (área do h3) */
   transition: transform 0.5s ease;
 }
 
 .conteudo h3 {
   margin: 0;
-  height: 30px; /* Força uma altura fixa para o título */
+  height: 30px;
+  /* Força uma altura fixa para o título */
   line-height: 30px;
   font-size: 20px;
   color: #4bf135;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.986);
-  white-space: nowrap; /* Evita que o título dobre em 2 linhas */
+  white-space: nowrap;
+  /* Evita que o título dobre em 2 linhas */
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
 .conteudo p,
 .conteudo a {
-  opacity: 0; /* começa invisível */
-  transition: opacity 0.4s ease 0.2s; /* delay pra aparecer depois */
+  opacity: 0;
+  /* começa invisível */
+  transition: opacity 0.4s ease 0.2s;
+  /* delay pra aparecer depois */
 }
 
 .conteudo button {
@@ -177,7 +189,7 @@ section:nth-of-type(even){
   font-weight: bold;
   cursor: pointer;
   opacity: 100;
-  transition: all 0.5s ease 0.2s;  
+  transition: all 0.5s ease 0.2s;
 }
 
 .btn-ver-mais:hover {
@@ -193,17 +205,21 @@ section:nth-of-type(even){
 }
 
 .card:hover img {
-  transform: scale(1.1); /* zoom na imagem */
-  filter: blur(2px) brightness(0.6); /* 2. desfoca + escurece um pouco */
+  transform: scale(1.1);
+  /* zoom na imagem */
+  filter: blur(2px) brightness(0.6);
+  /* 2. desfoca + escurece um pouco */
 }
 
 .card:hover .conteudo {
-  transform: translateY(0); /* Revela todo o conteúdo ao passar o mouse */
+  transform: translateY(0);
+  /* Revela todo o conteúdo ao passar o mouse */
 }
 
 .card:hover .conteudo p,
 .card:hover .conteudo a {
-  opacity: 1; /* aparece o texto e botão */
+  opacity: 1;
+  /* aparece o texto e botão */
 }
 
 
@@ -213,43 +229,48 @@ section:nth-of-type(even){
    LISTAS
 ========================== */
 
-ul{
-    margin-top: 20px;
-    padding-left: 25px;
+ul {
+  margin-top: 20px;
+  padding-left: 25px;
 }
 
-li{
-    margin-bottom: 10px;
+li {
+  margin-bottom: 10px;
 }
 
 
-.LocalRevenda {   
-    color: #333;
+.LocalRevenda {
+  color: #333;
 }
 
-.local-conteudo{
-  display: flex;  
+.local-conteudo {
+  display: flex;
   align-items: flex-start;
-  
-  gap: 40px; /* distância entre imagem e texto */
+
+  gap: 40px;
+  /* distância entre imagem e texto */
 }
 
-.LocalRevenda img{
-  
+.LocalRevenda img {
+
   width: auto;
   height: 300px;
-  border-radius: 15px;  
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: height 0.5s ease;
 }
 
 
 
-.ImpactoLocal p, h2, li{
+.ImpactoLocal p,
+h2,
+li {
   color: #333;
 }
 
-.ImpactoLocal p, h2, li{
+.ImpactoLocal p,
+h2,
+li {
   color: #333;
 }
 
@@ -260,58 +281,58 @@ li{
 ========================== */
 
 /* Título */
-#contato h2{
-    text-align: center;
-    margin-bottom: 35px;
-    color:#333;
+#contato h2 {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #333;
 }
 
 /* Container dos autores */
-.contatoContainer{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 90px;
-    flex-wrap: wrap;
+.contatoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 90px;
+  flex-wrap: wrap;
 }
 
 /* Card de cada autor */
-.contatoContainer article{
-    background: rgba(255,255,255,.9);
-    border: 1px solid #d4d4d4;
-    border-radius: 12px;
-    width: 300px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    transition: .3s;
+.contatoContainer article {
+  background: rgba(255, 255, 255, .9);
+  border: 1px solid #d4d4d4;
+  border-radius: 12px;
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+  transition: .3s;
 }
 
 /* Efeito ao passar o mouse */
-.contatoContainer article:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 8px 18px rgba(0,0,0,.15);
+.contatoContainer article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .15);
 }
 
 /* Foto do autor */
-.contatoContainer article img{
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 12px;
+.contatoContainer article img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
 }
 
 /* Nome */
-.contatoContainer article h3{
-    color: #fa2500;
-    margin-bottom: 10px;
+.contatoContainer article h3 {
+  color: #fa2500;
+  margin-bottom: 10px;
 }
 
 /* Contatos */
-.contatoContainer article p{
-    margin: 4px 0;
-    font-size: 1rem;
+.contatoContainer article p {
+  margin: 4px 0;
+  font-size: 1rem;
 }
 
 
@@ -319,11 +340,11 @@ li{
    RODAPÉ
 ========================== */
 
-footer{
-    background-color: #2E5E3B;
-    color: white;
-    text-align: center;
-    padding: 25px;
+footer {
+  background-color: #2E5E3B;
+  color: white;
+  text-align: center;
+  padding: 25px;
 }
 
 
@@ -452,31 +473,159 @@ footer{
 
 /* Respeita usuários que preferem menos animação */
 @media (prefers-reduced-motion: reduce) {
+
   .modal-overlay,
   .modal-content,
   .modal-close {
     transition: none;
   }
-/* Adiciona animação de ZOOM ao clicar em Saiba */
- .modal-content{
-    background:#fff;
-    width:90%;
-    max-width:650px;
-    max-height:85vh;
-    border-radius:15px;
-    overflow-y:auto;
-    position:relative;
 
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
+  /* Adiciona animação de ZOOM ao clicar em Saiba */
+  .modal-content {
+    background: #fff;
+    width: 90%;
+    max-width: 650px;
+    max-height: 85vh;
+    border-radius: 15px;
+    overflow-y: auto;
+    position: relative;
 
-    opacity:0;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .35);
+
+    opacity: 0;
     transform:
-        scale(.55)
-        translateY(80px)
-        rotateX(15deg);
+      scale(.55) translateY(80px) rotateX(15deg);
 
     transition:
-        opacity .45s ease,
-        transform .55s cubic-bezier(.17,.89,.32,1.28);
-}
+      opacity .45s ease,
+      transform .55s cubic-bezier(.17, .89, .32, 1.28);
+  }
+
+
+  /* ==========================
+   SEÇÃO POR QUE COMPRAR
+========================== */
+
+  #porque-comprar {
+    background-color: #DFDDD1;
+    text-align: center;
+    padding: 50px 10%;
+  }
+
+  #porque-comprar h2 {
+    font-size: 2.2rem;
+    color: #2E5E3B;
+    margin-bottom: 12px;
+  }
+
+  .subtitulo-persuasivo {
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-bottom: 45px;
+  }
+
+  .diferencial-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .diferencial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(46, 94, 59, 0.2);
+  }
+
+  .icone-box {
+    width: 65px;
+    height: 65px;
+    background-color: #A6BF76;
+    color: #2E5E3B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 18px auto;
+  }
+
+  .diferencial-card h3 {
+    font-size: 1.25rem;
+    color: #2E5E3B;
+    margin-bottom: 10px;
+  }
+
+  .diferencial-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* Caixa Chamativa de Vendas (CTA) */
+  .cta-box {
+    background: linear-gradient(135deg, #2E5E3B 0%, #1f4228 100%);
+    color: white;
+    padding: 40px 25px;
+    border-radius: 18px;
+    max-width: 850px;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .cta-box h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .cta-box p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+  }
+
+  .btn-comprar-agora {
+    display: inline-block;
+    background-color: #25D366;
+    /* Verde chamativo WhatsApp */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-comprar-agora:hover {
+    background-color: #1eb855;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
