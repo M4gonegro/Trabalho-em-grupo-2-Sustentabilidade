@@ -107,10 +107,10 @@ section:nth-of-type(even) {
   text-align: center;
   font-size: 2rem;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 10px;  
 }
 
-.secoes {
+.secoes {  
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* 3 colunas iguais */
@@ -615,6 +615,71 @@ footer {
   }
 
 
+
+
+
+
+
+/* ==========================
+   BALÃO FLUTUANTE
+========================== */
+
+.balao-flutuante{
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+
+.texto-balao{
+    background: #2E5E3B;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+
+    opacity: 0;
+    transform: translateX(20px);
+    transition: .3s;
+}
+
+.balao-flutuante i{
+    width: 65px;
+    height: 65px;
+
+    background: #25D366;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    font-size: 36px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
+
+    transition: .3s;
+}
+
+.balao-flutuante:hover i{
+    transform: scale(1.1);
+}
+
+.balao-flutuante:hover .texto-balao{
+    opacity: 1;
+    transform: translateX(0);
+}
 
 
 
