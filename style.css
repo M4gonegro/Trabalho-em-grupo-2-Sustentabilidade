@@ -327,12 +327,6 @@ section:nth-of-type(even) {
 
 /* IMPACTO E LOCAIS DE REVENDA */
 
-
-
-.LocalRevenda {
-  color: #333;
-}
-
 .local-conteudo {
   display: flex;
   align-items: flex-start;
@@ -348,6 +342,23 @@ section:nth-of-type(even) {
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: height 0.5s ease;
+}
+
+.impacto-conteudo{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.impacto-texto p{
+    margin-top: 20px;    
+}
+
+.miniplayer-container{  
+    margin-top: 50px;
+    width: 380px;
+    height: 290px;
+    flex-shrink: 0;
 }
 
 
