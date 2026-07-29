@@ -30,9 +30,6 @@ header {
   padding: 12px 20px;
 }
 
-header h1 {
-  font-size: 3rem;
-}
 
 header p {
   margin: 10px 0;
@@ -47,21 +44,136 @@ header img {
   margin-bottom: -2px;
 }
 
+
+/* ==========================
+   BALÃO FLUTUANTE
+========================== */
+
+/* Balão do whatsapp */
+.balao-flutuante{
+  /* Posicionamento do balão */
+    position: fixed;
+    right: 25px;
+    bottom: 50px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+}
+
+/* Texto do balão "fale conosco" */
+.texto-balao{
+    background: #2E5E3B;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: .3s;
+}
+
+/* Modificações no icone */
+.balao-flutuante i{
+    width: 65px;
+    height: 65px;
+
+    background: #25D366;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 36px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.3);
+    transition: .3s;
+}
+
+.balao-flutuante:hover i{
+    transform: scale(1.1);
+}
+
+.balao-flutuante:hover .texto-balao{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Balão do Instagram */
+.balao-flutuanteInsta{
+  /* Posicionamento do balão */
+    position: fixed;
+    right: 25px;
+    bottom: 130px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+
+.balao-flutuanteInsta i{
+  /* Estilo e propriedades do LINK */
+    width: 65px;
+    height: 65px;
+
+    background: #000000;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 36px;
+    box-shadow: 0 8px 20px #00000f77;
+    transition: .3s;
+}
+
+
+/* Texto do balão "fale conosco" */
+.texto-balaoInsta{
+    background: #070707;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,.25);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: .3s;
+}
+
+
+.balao-flutuanteInsta:hover i{
+    transform: scale(1.1);
+}
+
+.balao-flutuanteInsta:hover .texto-balaoInsta{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+/* BOTÕES DE NAVEGAÇÃO */
+
 nav {
   position: sticky;
   top: 0;
   z-index: 999;
-
   background-color: #2E5E3B;
-
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 18px;
-
   padding: 15px 20px;
   margin-top: 20px;
-
   box-shadow: 0 4px 1px 10px rgba(3, 160, 63, 0.185);
 }
 
@@ -75,6 +187,9 @@ nav a {
 nav a:hover {
   color: #d4a373;
 }
+
+
+
 
 /* ==========================
    SEÇÕES
@@ -99,11 +214,10 @@ section:nth-of-type(even) {
    PRODUTOS
 ========================== */
 
-/* Container dos cards */
+/* Container dos cards produtos*/
 
 .titulo-produtos {
-  grid-column: 1 / -1;
-  /* Faz o título ocupar todas as colunas */
+  grid-column: 1 / -1;  /* Faz o título ocupar todas as colunas */
   text-align: center;
   font-size: 2rem;
   color: #333;
@@ -112,20 +226,16 @@ section:nth-of-type(even) {
 
 .secoes {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 3 colunas iguais */
-  gap: 30px;
-  /* espaço entre os cards */
+  grid-template-columns: repeat(3, 1fr);  /* 3 colunas iguais */
+  gap: 30px;  /* espaço entre os cards */
   padding: 40px;
   max-width: 1200px;
-  margin: 0 auto;
-  /* centraliza */
+  margin: 0 auto;  /* centraliza */
 }
 
 .card {
   position: relative;
-  width: 100%;
-  /* ocupa 100% da coluna */
+  width: 100%;  /* ocupa 100% da coluna */
   height: 250px;
   border-radius: 15px;
   overflow: hidden;
@@ -138,8 +248,7 @@ section:nth-of-type(even) {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease, filter 0.5s ease;
-  /* 1. adiciona filter na transition */
+  transition: transform 0.5s ease, filter 0.5s ease;  /* 1. adiciona filter na transition */
 }
 
 .conteudo {
@@ -171,8 +280,7 @@ section:nth-of-type(even) {
   text-overflow: ellipsis;
 }
 
-.conteudo p,
-.conteudo a {
+.conteudo p{
   opacity: 0;
   /* começa invisível */
   transition: opacity 0.4s ease 0.2s;
@@ -188,15 +296,9 @@ section:nth-of-type(even) {
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
-  opacity: 100;
+  opacity: 1;
   transition: all 0.5s ease 0.2s;
 }
-
-.btn-ver-mais:hover {
-  background: #c08f5e;
-}
-
-
 
 /* ANIMAÇÃO NO HOVER */
 
@@ -216,27 +318,15 @@ section:nth-of-type(even) {
   /* Revela todo o conteúdo ao passar o mouse */
 }
 
-.card:hover .conteudo p,
-.card:hover .conteudo a {
+.card:hover .conteudo p{
   opacity: 1;
   /* aparece o texto e botão */
 }
 
 
 
+/* IMPACTO E LOCAIS DE REVENDA */
 
-/* ==========================
-   LISTAS
-========================== */
-
-ul {
-  margin-top: 20px;
-  padding-left: 25px;
-}
-
-li {
-  margin-bottom: 10px;
-}
 
 
 .LocalRevenda {
@@ -261,24 +351,7 @@ li {
 }
 
 
-
-.ImpactoLocal p,
-h2,
-li {
-  color: #333;
-}
-
-.ImpactoLocal p,
-h2,
-li {
-  color: #333;
-}
-
-
-
-/* ==========================
-   CONTATO
-========================== */
+/* CONTATO */
 
 /* Título */
 #contato h2 {
@@ -348,7 +421,117 @@ footer {
 }
 
 
+ /* ==========================
+   SEÇÃO POR QUE COMPRAR
+========================== */
 
+  #porque-comprar {
+    background-color: #DFDDD1;
+    text-align: center;
+    padding: 50px 10%;
+  }
+
+  #porque-comprar h2 {
+    font-size: 2.2rem;
+    color: #2E5E3B;
+    margin-bottom: 12px;
+  }
+
+  .subtitulo-persuasivo {
+    max-width: 750px;
+    margin: 0 auto 40px auto;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  .diferenciais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+    margin-bottom: 45px;
+  }
+
+  .diferencial-card {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .diferencial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(46, 94, 59, 0.2);
+  }
+
+  .icone-box {
+    width: 65px;
+    height: 65px;
+    background-color: #A6BF76;
+    color: #2E5E3B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 18px auto;
+  }
+
+  .diferencial-card h3 {
+    font-size: 1.25rem;
+    color: #2E5E3B;
+    margin-bottom: 10px;
+  }
+
+  .diferencial-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* Caixa Chamativa de Vendas (CTA) */
+  .cta-box {
+    background: linear-gradient(135deg, #2E5E3B 0%, #1f4228 100%);
+    color: white;
+    padding: 40px 25px;
+    border-radius: 18px;
+    max-width: 850px;
+    margin: 0 auto;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .cta-box h3 {
+    font-size: 1.6rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .cta-box p {
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    color: #e0e0e0;
+  }
+
+  .btn-comprar-agora {
+    display: inline-block;
+    background-color: #25D366;
+    /* Verde chamativo WhatsApp */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-comprar-agora:hover {
+    background-color: #1eb855;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6);
+  }
 
 
 /* ==========================
@@ -500,132 +683,5 @@ footer {
       opacity .45s ease,
       transform .55s cubic-bezier(.17, .89, .32, 1.28);
   }
-
-
-  /* ==========================
-   SEÇÃO POR QUE COMPRAR
-========================== */
-
-  #porque-comprar {
-    background-color: #DFDDD1;
-    text-align: center;
-    padding: 50px 10%;
-  }
-
-  #porque-comprar h2 {
-    font-size: 2.2rem;
-    color: #2E5E3B;
-    margin-bottom: 12px;
-  }
-
-  .subtitulo-persuasivo {
-    max-width: 750px;
-    margin: 0 auto 40px auto;
-    font-size: 1.1rem;
-    color: #444;
-    line-height: 1.6;
-  }
-
-  .diferenciais-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 25px;
-    margin-bottom: 45px;
-  }
-
-  .diferencial-card {
-    background: #ffffff;
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .diferencial-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(46, 94, 59, 0.2);
-  }
-
-  .icone-box {
-    width: 65px;
-    height: 65px;
-    background-color: #A6BF76;
-    color: #2E5E3B;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin: 0 auto 18px auto;
-  }
-
-  .diferencial-card h3 {
-    font-size: 1.25rem;
-    color: #2E5E3B;
-    margin-bottom: 10px;
-  }
-
-  .diferencial-card p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.5;
-  }
-
-  /* Caixa Chamativa de Vendas (CTA) */
-  .cta-box {
-    background: linear-gradient(135deg, #2E5E3B 0%, #1f4228 100%);
-    color: white;
-    padding: 40px 25px;
-    border-radius: 18px;
-    max-width: 850px;
-    margin: 0 auto;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-
-  .cta-box h3 {
-    font-size: 1.6rem;
-    color: #ffffff;
-    margin-bottom: 10px;
-  }
-
-  .cta-box p {
-    font-size: 1.05rem;
-    margin-bottom: 25px;
-    color: #e0e0e0;
-  }
-
-  .btn-comprar-agora {
-    display: inline-block;
-    background-color: #25D366;
-    /* Verde chamativo WhatsApp */
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 1.1rem;
-    padding: 14px 32px;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-  }
-
-  .btn-comprar-agora:hover {
-    background-color: #1eb855;
-    transform: scale(1.05);
-    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.6);
-  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
